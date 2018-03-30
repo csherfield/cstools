@@ -19,14 +19,14 @@ private:
     unsigned long number_of_rows;
     unsigned long number_of_columns;
 
-    vector<vector<double> > values;
+    std::vector<std::vector<double> > values;
 
-    vector<vector<double*> > matrix;
+    std::vector<std::vector<double*> > matrix;
 
-    void print_vector(vector<double*> v);
+    void print_vector(std::vector<double*> v);
 
-    void create_matrix(vector<vector<double> > v);
-    void create_matrix(vector<double> v);
+    void create_matrix(std::vector<std::vector<double> > v);
+    void create_matrix(std::vector<double> v);
 
 
 
@@ -34,25 +34,25 @@ public:
 
     // Constructors
 
-    Matrix(vector<vector<double> > v);
+    Matrix(std::vector<std::vector<double> > v);
 
-    Matrix(vector<double> v);
+    Matrix(std::vector<double> v);
 
 
 
 
     // Getters
 
-    vector<double*> getRow(unsigned long index);
+    std::vector<double*> getRow(unsigned long index);
 
-    vector<vector<double*> > getRows();
-    vector<vector<double*> > getColumns();
+    std::vector<std::vector<double*> > getRows();
+    std::vector<std::vector<double*> > getColumns();
 
     int getNumber_of_rows() const;
 
     int getNumber_of_columns() const;
 
-    vector<double*> getColumn(unsigned long index);
+    std::vector<double*> getColumn(unsigned long index);
 
 
     // Setters
@@ -67,9 +67,9 @@ public:
 
     // Others
 
-    vector<double> add_vectors(const vector<double*> v1,const vector<double*> v2);
+    std::vector<double> add_vectors(const std::vector<double*> v1,const std::vector<double*> v2);
 
-    double multiply_vectors(vector<double*> v1, vector<double*> v2);
+    double multiply_vectors(std::vector<double*> v1, std::vector<double*> v2);
 
     void print_matrix();
 
