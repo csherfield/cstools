@@ -228,7 +228,7 @@ Matrix Matrix::identity(unsigned long n)
         v.push_back(row);
     }
 
-    return Matrix::Matrix(v);
+    return Matrix(v);
 }
 
 } /* namespace cstools */

@@ -14,39 +14,56 @@ namespace cstools {
 
 class NewMatrix {
 
-
-public:
-	/*   Constructors   */
-	NewMatrix(int rows, int cols);
-	NewMatrix(std::vector<std::vector<double> > *v);
-
-
-public:
-	/* Destructors   */
-	virtual ~NewMatrix();
-
-
-public:
-	 /*    Operators   */
-	NewMatrix operator+(NewMatrix& m2);
-	NewMatrix operator*(NewMatrix& m2);
-
 private:
 	/*    Members    */
 	std::vector<std::vector<double> > *m_pmatrix;
+	int nRows;
+	int nCols;
 
-private:
-	/* Methods  */
+public:
+	/*   Constructors   */
+	NewMatrix();
+	NewMatrix(int rows, int cols);
+	NewMatrix(int rows, int cols, const double &a);
+	NewMatrix(std::vector<std::vector<double> > *v);
 
-	std::vector<double> add_vectors(const std::vector<double> v1,const std::vector<double> v2);
+	// TODO Copy constructor
+//	NewMatrix(const NewMatrix &rhs);
 
-	void print_vector(std::vector<double> v);
+	/* Destructors   */
+	virtual ~NewMatrix();
+
+	/* Overloaded Operators */
+	void operator=(const NewMatrix &m);
+	NewMatrix operator+(const NewMatrix &other);
+//	NewMatrix operator*(const NewMatrix &other);
+//	std::vector<double>* operator[](const int row );
 
 
 public:
-	void print_matrix();
-};
+	/* Methods  */
 
+	void printMatrix();
+	std::vector<std::vector<double> > * getElements() const { return m_pmatrix; }
+
+
+
+
+
+
+	// Static methods
+	static void printVector(std::vector<double> &v);
+	static std::vector<double> addVectors(const std::vector<double> &v1,const std::vector<double> &v2);
+
+//	inline T* operator[](const int i);
+//	inline const T* operator[](const int i) const;
+//	inline int nrows() const;
+//	inline int ncols() const;
+//	void resize(int newn, int newm);
+//	void assign(int newn, int newm, const T &a);
+
+
+};
 
 } /* namespace cstools */
 
