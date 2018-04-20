@@ -61,7 +61,7 @@ public:
 
 	inline int size() const { return nn;};
 
-	double magnitue() const;
+	double magnitude() const;
 
 
 };

@@ -191,12 +191,13 @@ void Vector::assign(int newn, const double &a)
 
 }
 
-double Vector::magnitue() const
+double Vector::magnitude() const
 {
 	double sum = 0;
-	for (auto it = this->begin(); it != this->end(); it++)
+	for (int i = 0; i < v->size(); i++)
 	{
-		sum += (*it)*(*it);
+		double val = (*v)[i];
+		sum += val * val;
 	}
 	sum = sqrt(sum);
 
