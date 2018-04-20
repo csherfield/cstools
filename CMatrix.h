@@ -33,13 +33,13 @@ public:
 	CMatrix(int n, int m, const std::vector<double> &a);
 	CMatrix(int n, int m, const std::vector<Vector> &a);
 
-//	CMatrix(const CMatrix &rhs);
-//	    Cmatrix & operator=(const NRmatrix &rhs);
-//	    typedef T value_type;
+	CMatrix(const CMatrix &rhs);
+	CMatrix & operator=(const CMatrix &rhs);
 	inline Vector operator[](const int i) {return (*p_matrix)[i]; };
-//	    inline const T* operator[](const int i) const; const version.
-//	    inline int nrows() const;
-//	    inline int ncols() const;
+	inline const Vector operator[](const int i) const {return (*p_matrix)[i]; };
+	CMatrix &operator+(const CMatrix &rhs);
+	bool operator==(const CMatrix &rhs);
+
 //	    void resize(int newn, int newm);
 //	    void assign(int newn, int newm, const T &a); ~NRmatrix();
 
@@ -53,8 +53,12 @@ public:
 	iterator end() { return p_matrix->end(); }
 	const_iterator end() const { return p_matrix->end(); }
 
-//	int nRows() const;
-//	int nCols() const;
+	inline int nRows() const;
+	inline int nCols() const;
+
+
+private:
+	static bool sizeCheck(const CMatrix &m1, const CMatrix &m2);
 };
 
 } /* namespace cstools */
