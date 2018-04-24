@@ -6,16 +6,3 @@
  */
 
 #include "Complex.h"
-
-namespace cstools {
-
-Complex::Complex() : temp(0) {
-	// TODO Auto-generated constructor stub
-
-}
-
-Complex::~Complex() {
-	// TODO Auto-generated destructor stub
-}
-
-} /* namespace cstools */
