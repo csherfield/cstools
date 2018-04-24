@@ -4,13 +4,25 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../Matrix.cpp 
+../CMatrix.cpp \
+../Complex.cpp \
+../Maths.cpp \
+../RootFinding.cpp \
+../Vector.cpp 
 
 OBJS += \
-./Matrix.o 
+./CMatrix.o \
+./Complex.o \
+./Maths.o \
+./RootFinding.o \
+./Vector.o 
 
 CPP_DEPS += \
-./Matrix.d 
+./CMatrix.d \
+./Complex.d \
+./Maths.d \
+./RootFinding.d \
+./Vector.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
